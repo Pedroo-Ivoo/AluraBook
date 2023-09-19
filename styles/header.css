@@ -1,0 +1,149 @@
+.cabecalho__menu-hamburguer{
+width: 24px;
+height: 24px;
+background-image: url(../imagens/Menu.svg);
+background-repeat: no-repeat;
+background-position: center;
+display: inline-block;
+}
+.cabecalho{
+    background-color:var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+
+}
+.container{
+    display: flex;
+    align-items: center;
+    
+}
+.container__imagem{
+    padding: 1em;
+}
+.lista-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+.container__botao:checked ~.container__rotulo > .cabecalho__menu-hamburguer{
+    background-image: url("/imagens/MenuAberto.svg");
+}
+.container__botao:checked ~.container__rotulo{
+    background-color: var(--azul);
+}
+.container__botao:checked ~.lista-menu{
+    display: block;
+}
+.lista-menu{
+    width: 65vw; 
+    background-color: #fff;
+    font-family: poppins;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+ }
+
+.lista-menu__titulo, .lista-menu__itens {
+        padding: 1em;
+        color: var(--amarelo);
+        font-weight: 700;
+}
+
+.lista-menu__links{
+     color: var(--azul);
+     text-decoration: none;        
+ }
+.container__botao{
+     display: none;
+}
+.container__titulo, .opcoes{
+    display: none;
+}
+.container__texto{
+    display: none;
+}
+@media screen and (min-width: 1024px){
+    .container__titulo, .container__titulo--negrito{
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+        font-weight: 300;
+     }
+     .container__titulo{
+        display: block;
+     }
+    .container__titulo--negrito{
+        font-weight: 700;
+    }
+    .opcoes{
+        display: flex;
+    }
+    .opcoes__item{
+        padding: 1em;
+        color: var(--preto);
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .opcoes__link{
+        text-decoration: none;
+        color: var(--preto);
+        font-size: 16px;
+        font-weight: 400;
+        
+    }
+    .cabecalho__menu-hamburguer{
+        display: none;
+    }
+    .container__imagem-transparente{
+        display: none;
+    }
+    .opcoes__botao:checked ~ .lista-menu{
+        display: block;
+        width: auto;
+    }
+    .opcoes__botao{
+        display: none;
+        
+    }
+    .opcoes__item-categoria:hover{
+        background-color: var(--azul);
+        color: var(--branco);
+    }
+    .opcoes__item:hover .opcoes__link{
+        background-color: var(--azul);
+        color: var(--branco);
+    }
+    .opcoes__item:hover{
+        background-color: var(--azul);
+    }
+    /* Esta configuração faz com que ao passar o mouse sobre a lista do menu ele fique
+    com a cor branca no texto sem a necessidade de o mouse estar precisamente sobre o texto. */
+    .lista-menu__itens:hover .lista-menu__links{
+         color: var(--branco);
+    }
+    /* Aplica a cor de fundo ao passar o mouse sobre cada item da lista */
+    .lista-menu__itens:hover{
+        background-color: var(--azul);
+    }
+}
+@media screen and (min-width: 1728px){
+    .container__link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+    .container__texto{
+        font-size: 20px;
+        display: block;
+
+    }
+    .cabecalho{
+        padding: 0 2em;
+    }
+    .opcoes{
+        margin-right: auto;
+    }
+}
